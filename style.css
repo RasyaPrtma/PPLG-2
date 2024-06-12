@@ -330,8 +330,10 @@ header.sticky {
 }
 
 .culture-img{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .culture-img iframe{
