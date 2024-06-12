@@ -32,7 +32,7 @@ header {
     z-index: 1000;
     width: 100%;
     background: transparent;
-    padding: 30px 17%;
+    /* padding: 30px 17%; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -50,6 +50,8 @@ span {
 }
 
 .navbar {
+    top:0;
+    bottom: 0;
     display: flex;
 }
 
@@ -67,13 +69,13 @@ span {
 
 .h-right {
     display: flex;
-    align-self: center;
+    align-items: center;
 }
 
 .h-right a:first-child{
     color: var(--text-color);
     font-size: var(--p-font);
-    margin-right: 20px;
+    /* margin-right: 20px;   */
 }
 
 .h-right a{
@@ -81,7 +83,7 @@ span {
     font-size: 20px;
     color: #fff;
     margin-right: 8px;
-    margin-left: 13px;
+    /* margin-left: 13px; */
     transition: all .50s ease;
 }
 
@@ -90,12 +92,12 @@ span {
     transform: translateY(-3px);
 }
 
-#menuicon {
+#menu-icon {
     color: var(--text-color);
     font-size: 30px;
     cursor: pointer;
-    z-index: 10001;
-    display: none;
+    z-index: 1000;
+    transform: translateX(500%);
 }
 
 section {
@@ -212,7 +214,7 @@ header.sticky {
 }
 
 .holiday {
-    margin-left: 60px;
+    /* margin-left: 60px; */
     display: grid;
     grid-template-columns: repeat(1, 2fr);
     align-items: center;
@@ -241,7 +243,7 @@ header.sticky {
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 25px;
-    margin-left: -12px;
+    /* margin-left: -12px; */
 }
 
 .holiday-text p{
@@ -250,7 +252,7 @@ header.sticky {
     line-height: 30px;
     color: #ffffffab;
     margin-bottom: 35px;
-    margin-left: -12px;
+    /* margin-left: -12px; */
 }
 
 .holiday-img img:hover{
@@ -312,22 +314,23 @@ header.sticky {
 }
 
 .center-btn {
-    margin-left: 380px;
+    /* margin-left: 380px; */
     text-align: center;
     margin-top: 2rem;
 }
 
 .culture {
+    width: 100%;
     align-items: center;
     margin-bottom: 40px;
     display: grid;
     grid-template-columns: repeat(1, 4fr);
     gap: 1.2rem;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 
 .culture-img iframe{
-    width: 380px;
+    width: 100%;
     height: 420px;
     border-radius: 60px;
     padding: 30px;
@@ -335,12 +338,13 @@ header.sticky {
 }
 
 .culture-text a {
+    flex-wrap: wrap;
     color: #fff;
     font-size: large;
 }
 
 .culture-text i{
-    margin-right: 5px;
+    /* margin-right: 5px; */
     width: 30px;
 }
 
@@ -489,36 +493,6 @@ header.sticky {
         gap: 3rem;
     }
 
-    #menu-icon {
-        display: block;
-    }
-
-    .navbar {
-        position: absolute;
-        width: 100%;
-        height: 100vh;
-        padding: 40px 60px;
-        top: 0;
-        bottom: 0;
-        left: 100%;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        background: var(--bg-color);
-        transition: all .50s ease;
-    }
-
-    .navbar a {
-        display: block;
-        color: #979797;
-        padding: 0;
-        margin: 0px 0px 40px 0px;
-        font-size: 2.2rem;
-        font-weight: 400;
-    }
-    .navbar.open{
-        left: 0;
-    }
 }
 
 @media (max-width : 800px) {
@@ -531,11 +505,77 @@ header.sticky {
         grid-template-columns: 1fr;
         margin-left: 0;
     }
+
+    .holiday-text {
+        text-align: center;
+    }
+
     .culture {
+        place-items: center;
         grid-template-columns: 1fr;
     }
+
+    .culture h1{
+        padding: 10px;
+        font-size: 1.5em;
+    }
+
+    .culture-text a{
+        font-size: 1em;
+    }
+
     .newsletter-content {
         grid-template-columns: 1fr;
+    }
+    .newsletter-content form{
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+    }
+    .open{
+        top: 0;
+        bottom: 0;
+    }
+
+    #menu-icon {
+        transform: translateX(10%);
+        transition: all .5s ease;
+    }
+
+    .navbar {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        padding-top: 5em;
+        top: 0;
+        bottom: 0;
+        left: 100%;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--bg-color);
+        transition: all .50s ease;
+        text-align: right;
+    }
+
+    .navbar a {
+        text-align: left;
+        font-size: 26px;
+        display: block;
+        color: #979797;
+        padding: 0;
+        font-weight: 400;
+    }
+    .navbar.open{
+        top:0;
+        bottom: 0;
+        left: 40%;
+    }
+    #menu-icon.open{
+        z-index: 100%;
+        position: absolute;
+        transform: translate(-200%,50%);
+        transition: all .5s ease-in-out;
     }
 }
 
