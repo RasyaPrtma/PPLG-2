@@ -216,15 +216,20 @@ header.sticky {
 .holiday {
     /* margin-left: 60px; */
     display: grid;
-    grid-template-columns: repeat(1, 2fr);
     align-items: center;
-    gap: 3rem;
+}
+
+.holiday-img{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .holiday-img img{
     padding: 20px;
-    width: 470px;
-    height: 370px;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
     border-radius: 30px;
     transition: .3s ease;
 }
@@ -279,12 +284,14 @@ header.sticky {
 
 .box{
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .box img{
     border: 1px solid var(--main-color);
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     border-radius: 20px;
     filter: brightness(70%);
@@ -337,6 +344,7 @@ header.sticky {
 }
 
 .culture-img iframe{
+    object-fit: contain;
     width: 250px;
     height: 250px;
     border-radius: 60px;
